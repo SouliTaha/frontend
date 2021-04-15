@@ -1,6 +1,10 @@
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-light bg-light d-flex">
     <div class="container-fluid">
-      <a class="navbar-brand">Manger Application</a>
-      <a class="navbar-brand" routerLink='login'>Login</a>
+      <a class="navbar-brand mr-auto p-2">Manger Application</a>
+      <a class="navbar-brand p-2" routerLink='login' *ngIf='!loggedIn' >Login</a>
+      <a class="navbar-brand p-2" routerLink='login' *ngIf='loggedIn'>profile</a>
+      <a class="navbar-brand  " href="#" (click)='logout($event)' *ngIf='loggedIn'>Logout</a>
+
+
     </div>
   </nav>
