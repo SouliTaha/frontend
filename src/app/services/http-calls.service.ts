@@ -14,4 +14,12 @@ export class HttpCallsService {
   login(data: any){
     return   this.http.post('http://localhost:8000/api/login', data)
   }
+
+  ResetPassword(data){
+    return this.http.post('http://localhost:8000/api/ResetPassword', data)
+  }
+  changePassword(data){
+    return this.http.post('http://localhost:8000/api/changepassword', data)
+  }
+  
 }

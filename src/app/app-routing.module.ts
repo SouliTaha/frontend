@@ -28,12 +28,12 @@ const routes: Routes = [
   {
     path:'resetpwd',
     component:ResResetComponent,
-    canActivate:[AfterLoginService]
+    canActivate:[BeforeLoginService]
   },
   {
     path:'responsepwd',
     component:ResetComponent,
-    canActivate:[AfterLoginService]
+    canActivate:[BeforeLoginService]
   },
   {
     path:'',

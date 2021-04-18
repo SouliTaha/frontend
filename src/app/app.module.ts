@@ -13,11 +13,11 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpCallsService } from './services/http-calls.service';
+import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     LoginComponent,
     SignupComponent,
     ProfileComponent,
@@ -25,6 +25,8 @@ import { HttpCallsService } from './services/http-calls.service';
     ResResetComponent,
     WelcomeComponent,
     FooterComponent,
+    NavbarComponent,
+
     
   ],
   imports: [
@@ -32,8 +34,10 @@ import { HttpCallsService } from './services/http-calls.service';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    SnotifyModule
   ],
-  providers: [HttpCallsService],
+  providers: [HttpCallsService , { provide: 'SnotifyToastConfig', useValue: ToastDefaults},
+  SnotifyService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
