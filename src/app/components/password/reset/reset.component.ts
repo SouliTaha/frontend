@@ -36,7 +36,7 @@ export class ResetComponent implements OnInit {
     this.router.navigateByUrl('/login');    
   }
   handleError(error){
-
+this.error=error.error.errors;
   }
 
 }

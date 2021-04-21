@@ -8,24 +8,27 @@ import { HttpCallsService } from 'src/app/services/http-calls.service';
   styleUrls: ['./res-reset.component.css']
 })
 export class ResResetComponent implements OnInit {
+  
   public form = {
     email : null
   }
   constructor(private Http:HttpCallsService,
-    private notify : SnotifyService
+    private notify : SnotifyService,
+    private Nottify:SnotifyService
     ) { }
 
   ngOnInit(): void {
   }
   onSubmit(){
+    this.Nottify.info('wait...',{timeout:6000})
     this.Http.ResetPassword(this.form).subscribe(
       data => this.handleResponse(data),
       error => this.notify.error(error.error.error)
     );
   }
   handleResponse(res){
-    console.log(res)
-      this.form.email = null;
+this.Nottify.success(res.data,{timeout:4000})
+    this.form.email = null;
   }
 
 }

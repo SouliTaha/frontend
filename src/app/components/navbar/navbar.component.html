@@ -2,7 +2,8 @@
     <div class="container-fluid">
       <a class="navbar-brand mr-auto p-2">Manger Application</a>
       <a class="navbar-brand p-2" routerLink='login' *ngIf='!loggedIn' >Login</a>
-      <a class="navbar-brand p-2" routerLink='login' *ngIf='loggedIn'>profile</a>
+      <a class="navbar-brand p-2" routerLink='profile' *ngIf='loggedIn'>profile</a>
+      <a class="navbar-brand p-2" routerLink='productlist' *ngIf='loggedIn'>Products</a>
       <a class="navbar-brand  " href="#" (click)='logout($event)' *ngIf='loggedIn'>Logout</a>
 
 

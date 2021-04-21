@@ -1,5 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { TokenService } from './token.service';
 
 @Injectable({
@@ -13,6 +14,8 @@ authStatus = this.loggedIn.asObservable(); //when the loggedIn changes the auths
 changeAuthStatus (value : boolean){
   this.loggedIn.next(value);
 }
-constructor(private Token:TokenService) { }
+
+constructor(private Token:TokenService,
+) { }
 
 }

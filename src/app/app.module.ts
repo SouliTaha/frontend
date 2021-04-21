@@ -14,6 +14,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpCallsService } from './services/http-calls.service';
 import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
+import { ProductComponent } from './components/product/product.component';
+import { AddproductComponent } from './components/addproduct/addproduct.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
     WelcomeComponent,
     FooterComponent,
     NavbarComponent,
+    ProductComponent,
+    AddproductComponent,
+    EditUserComponent,
 
     
   ],

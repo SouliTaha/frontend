@@ -1,24 +1,20 @@
 
-<div class="my-3">
-    <ul class="nav justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Products</a>
-        </li>
-      </ul>
-</div>
 
-<div class="card  mx-5 my-5">
+
+<div class="card  mx-5 my-5" >
     <div class="card-header">
       User Profile
     </div>
-    <div class="card-body">
-      <span></span>
-      <h6>Name</h6>
-      <h6>Email</h6>
-      <a href="#" class="btn btn-primary float-right">update profile</a>
+    <div class="card-body"  >
+      
+      <img src="public\uploads\avatar.png" width="100px"height="100px" class='mb-2' >
+ 
+      <h6>Name: {{userData.token.name}} </h6>
+      <h6>Email :{{userData.token.email}}</h6>
+      
+    
+      <a class="btn btn-primary float-right" routerLink='editUser'>update profile</a>
     </div>
+    
    
   </div>
