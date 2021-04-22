@@ -15,12 +15,14 @@ export class HttpCallsService {
     private Token:TokenService,
   
 ) { }
+
   signup( data: { email: null; name: null; password: null; password_confirmation: null; }){
    return this.http.post('http://localhost:8000/api/signup', data)
   } 
   login(data: any){
     return   this.http.post('http://localhost:8000/api/login', data)
   }
+  
   
   userData(){
    let Tkn = this.Token.get();
@@ -39,7 +41,55 @@ export class HttpCallsService {
     return this.http.post('http://localhost:8000/api/changepassword', data)
   }
   Productlist(){
-    return this.http.get('http://localhost:8000/api/productlist');
+    let Tkn = this.Token.get();
+    return this.http.get('http://localhost:8000/api/productlist',
+    {
+      // Send the authentication token here 
+      headers: {
+        'Authorization': 'Bearer ' + Tkn
+    }
+    });
   }
   
+  addproduct(data){
+    let Tkn = this.Token.get();
+    return this.http.post('http://localhost:8000/api/add', data , {
+      // Send the authentication token here 
+      headers: {
+        'Authorization': 'Bearer ' + Tkn
+    }
+     });
+  }
+  
+  deleteProduct(id){
+    let Tkn = this.Token.get();
+    return this.http.delete('http://localhost:8000/api/delete/'+id,
+    {
+      // Send the authentication token here 
+      headers: {
+        'Authorization': 'Bearer ' + Tkn
+    }
+  });
 }
+  getProductById(id){
+    let Tkn = this.Token.get();
+    return this.http.get('http://localhost:8000/api/product/'+id,
+    {
+      // Send the authentication token here 
+      headers: {
+        'Authorization': 'Bearer ' + Tkn
+    }}
+    );
+  }
+  updateProduct(id , data){
+    let Tkn = this.Token.get();
+    return this.http.put('http://localhost:8000/api/edit/'+id, data , {
+      // Send the authentication token here 
+      headers: {
+        'Authorization': 'Bearer ' + Tkn
+    }
+     });
+  }
+
+}
+

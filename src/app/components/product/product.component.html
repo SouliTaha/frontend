@@ -9,7 +9,7 @@
             <th scope="col">Label</th>
             <th scope="col">Price</th>
             <th scope="col">Color</th>
-            <th scope="col">image</th>
+            
             <th> <button class="btn btn-success" routerLink='addproduct'>Add</button></th>
           </tr>
          
@@ -18,11 +18,11 @@
           <tr>
             <th scope="row" >{{obj.id}}</th>
             <td>{{obj.name}}</td>
-            <td>{{obj.prix}}</td>
-            <td>{{obj.couleur}}</td>
-            <td>{{obj.image}}</td>
-            <td><button class="btn btn-info">update</button></td>
-            <td><button class="btn btn-danger">delete</button></td>
+            <td>{{obj.price}}</td>
+            <td>{{obj.color}}</td>
+            
+            <td><button class="btn btn-info" routerLink="/Product/{{obj.id}}">update</button></td>
+            <td><button class="btn btn-danger" (click)="deleteData(obj.id)">delete</button></td>
 
           </tr>
          

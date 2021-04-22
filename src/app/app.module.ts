@@ -17,6 +17,7 @@ import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
 import { ProductComponent } from './components/product/product.component';
 import { AddproductComponent } from './components/addproduct/addproduct.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
+import { EditProductComponent } from './components/edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
     ProductComponent,
     AddproductComponent,
     EditUserComponent,
+    EditProductComponent,
 
     
   ],

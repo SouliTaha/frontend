@@ -21,5 +21,11 @@ export class ProductComponent implements OnInit {
       this.data=res;
     });
   }
+  deleteData(id){
+    this.http.deleteProduct(id).subscribe(res =>
+      {
+        this.getproductlist();
+      })
+  }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 import { HttpCallsService } from 'src/app/services/http-calls.service';
 import { TokenService } from 'src/app/services/token.service';
 
@@ -21,7 +22,9 @@ export class SignupComponent implements OnInit {
 
   constructor(private Http:HttpCallsService,
     private token :TokenService,
-    private router:Router) { }
+    private router:Router,
+    private auth:AuthService
+    ) { }
   
 
   onSubmit(){
@@ -33,6 +36,7 @@ export class SignupComponent implements OnInit {
   }
   handleResponse(data){
     this.token.handle(data.access_token); //after storing the token 
+    this.auth.changeAuthStatus(true);
     this.router.navigateByUrl('/profile'); //user redirect to profile
    }
    

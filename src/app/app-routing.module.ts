@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddproductComponent } from './components/addproduct/addproduct.component';
+import { EditProductComponent } from './components/edit-product/edit-product.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { LoginComponent } from './components/login/login.component';
 import { ResResetComponent } from './components/password/res-reset/res-reset.component';
@@ -58,6 +59,12 @@ const routes: Routes = [
     component:EditUserComponent,
     canActivate:[AfterLoginService]
   },
+  {
+    path:'Product/:id',
+    component:EditProductComponent,
+    canActivate:[AfterLoginService]
+  },
+ 
  
   
 ];

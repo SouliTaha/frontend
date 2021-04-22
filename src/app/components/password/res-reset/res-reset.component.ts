@@ -27,8 +27,8 @@ export class ResResetComponent implements OnInit {
     );
   }
   handleResponse(res){
-this.Nottify.success(res.data,{timeout:4000})
-    this.form.email = null;
+    console.log(res)
+      this.form.email = null;
   }
 
 }
