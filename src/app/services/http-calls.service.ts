@@ -90,6 +90,26 @@ export class HttpCallsService {
     }
      });
   }
+  getUserById(id){
+    let Tkn = this.Token.get();
+    return this.http.get('http://localhost:8000/api/user/'+id,
+    {
+      // Send the authentication token here 
+      headers: {
+        'Authorization': 'Bearer ' + Tkn
+    }}
+    );
+  }
+  updateUser(id,data){
+    let Tkn = this.Token.get();
+    return this.http.put('http://localhost:8000/api/editUser/'+id, data , {
+      // Send the authentication token here 
+      headers: {
+        'Authorization': 'Bearer ' + Tkn
+    }
+     });
+  }
+  
 
 }
 

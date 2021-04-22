@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { HttpCallsService } from 'src/app/services/http-calls.service';
 
 @Component({
   selector: 'app-edit-user',
@@ -6,15 +8,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-user.component.css']
 })
 export class EditUserComponent implements OnInit {
-public form ={
+id:any;
+userData:any;
+
+  public form ={
   name:null,
-  image:null
+  email:null,
+  
 }
-  constructor() { }
+  constructor(
+    private route:ActivatedRoute,
+    private http:HttpCallsService
+    ) { }
 
   ngOnInit(): void {
+this.id=this.route.snapshot.params.id;
+this.getData();
   }
-onSubmit(){
-  
+getData(){
+  this.http.getUserById(this.id).subscribe(res=>{
+    this.userData = res; 
+    this.form = this.userData
+  })
+}
+updateUser(){
+  this.http.updateUser(this.id,this.form).subscribe(res =>{
+  })
 }
 }

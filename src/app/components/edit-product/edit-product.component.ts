@@ -15,8 +15,9 @@ export class EditProductComponent implements OnInit {
     price:null,
     color:null,
   }
-  constructor(private route:ActivatedRoute
-    ,private http:HttpCallsService
+  constructor(
+    private route:ActivatedRoute,
+    private http:HttpCallsService
     ) { }
 
     
@@ -34,7 +35,7 @@ export class EditProductComponent implements OnInit {
   }
   updateProduct(){
     this.http.updateProduct(this.id ,this.form ).subscribe(res=>{
-      
+
     })
   }
 }

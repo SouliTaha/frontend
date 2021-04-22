@@ -5,25 +5,25 @@
                 Edit User
             </div>
             <div class="card-body">
-                <form #EditForm=ngForm (ngSubmit)='onSubmit()'>
+                <form  (ngSubmit)='updateUser()'>
                   
-                  <div class="row mb-3">
-                      <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+                  
+                    <div class="row mb-3">
+                      <label for="inputemail" class="col-sm-2 col-form-label">Email</label>
+                      <div class="col-sm-10">
+                        <input type="email" name="email" class="form-control" id="inputeamil"
+                         [(ngModel)]="form.email" disabled>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="inputName" class="col-sm-2 col-form-label"> New Name</label>
                       <div class="col-sm-10">
                         <input type="text" name="name" class="form-control" id="inputName"
                         placeholder="New User Name" [(ngModel)]="form.name" required>
                       </div>
-    
-                    </div>
-                    <div class="row mb-3">
-                      <label for="inputimage" class="col-sm-2 col-form-label">Photo</label>
-                      <div class="col-sm-10">
-                        <input type="file" name="image" class="form-control" id="inputimage"
-                         [(ngModel)]="form.image" required>
-                      </div>
-                    </div>
+                    </div>  
                  
-                    <button type="submit" class="btn btn-primary" [disabled]="!EditForm.valid">Update</button>
+                    <button type="submit" class="btn btn-primary" >Update User </button>
                     
                   </form>
                   
